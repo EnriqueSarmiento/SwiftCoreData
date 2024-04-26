@@ -11,10 +11,14 @@ import CoreData
 class TareasViewModel: ObservableObject{
    @Published var tarea: String = ""
   
-   func saveData(context: NSManagedObjectContext){
+   func saveData(context: NSManagedObjectContext, meta: Metas){
       let newTarea = Tareas(context: context)
       newTarea.tarea = tarea
       newTarea.id = UUID().uuidString
+      // here we stablish the relationship between tareas and metas
+      newTarea.idMeta = meta.id
+      //here we need to specify the relationahip name that we stablished on coredata
+      meta.mutableSetValue(forKey: "relationToTareas").add(newTarea)
       
       do {
          try context.save()

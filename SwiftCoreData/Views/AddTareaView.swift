@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct AddTareaView: View {
+   
+   @Environment(\.managedObjectContext) var context
+   @ObservedObject var model = TareasViewModel()
+   var meta : Metas
+   
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+       VStack{
+          TextField("Tarea", text: $model.tarea)
+             .textFieldStyle(RoundedBorderTextFieldStyle())
+          
+          Button {
+             model.saveData(context: context, meta: meta)
+          } label: {
+             Text("Guardar tarea")
+          }
+          
+          Spacer()
 
-#Preview {
-    AddTareaView()
+       }
+    }
 }
