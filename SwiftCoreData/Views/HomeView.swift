@@ -11,6 +11,7 @@ import CoreData
 struct HomeView: View {
    
    @Environment(\.managedObjectContext) var context
+   @ObservedObject var model = MetasViewModel()
    
    //here we create a fetch request to coredate to retorn our metas data.
    @FetchRequest(entity: Metas.entity(), sortDescriptors: []) var metas: FetchedResults<Metas>
@@ -29,6 +30,10 @@ struct HomeView: View {
                       }
                    }
                    
+                }.onDelete { (indexSet) in
+                  let borrarMeta = metas[indexSet.first!]
+                   model.deleteData(item: borrarMeta, context: context)
+               
                 }
              }
              NavigationLink(destination: AddMetaView()) {

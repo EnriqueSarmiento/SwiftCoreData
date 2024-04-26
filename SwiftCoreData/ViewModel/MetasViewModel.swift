@@ -25,4 +25,14 @@ class MetasViewModel: ObservableObject {
          print("DEBUG: no guardo el new meta", error.localizedDescription)
       }
    }
+   
+   func deleteData(item: Metas, context: NSManagedObjectContext){
+      context.delete(item)
+      do {
+         try context.save()
+         print("DEBUG: elimino una meta")
+      } catch let error as NSError {
+         print("DEBUG: error al eliminar una meta", error.localizedDescription)
+      }
+   }
 }
