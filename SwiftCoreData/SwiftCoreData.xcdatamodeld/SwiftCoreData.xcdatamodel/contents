@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Fotos" representedClassName="Fotos" syncable="YES" codeGenerationType="class">
+        <attribute name="foto" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="idTarea" optional="YES" attributeType="String"/>
+        <relationship name="origen" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tareas" inverseName="relationTofotos" inverseEntity="Tareas"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="Metas" representedClassName="Metas" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="titulo" optional="YES" attributeType="String"/>
+        <relationship name="relationToTareas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tareas" inverseName="origen" inverseEntity="Tareas"/>
+    </entity>
+    <entity name="Tareas" representedClassName="Tareas" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="idMeta" optional="YES" attributeType="String"/>
+        <attribute name="tarea" optional="YES" attributeType="String"/>
+        <relationship name="origen" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Metas" inverseName="relationToTareas" inverseEntity="Metas"/>
+        <relationship name="relationTofotos" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Fotos" inverseName="origen" inverseEntity="Fotos"/>
+    </entity>
 </model>

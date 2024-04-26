@@ -13,6 +13,7 @@
 		3E48A6F92BDC149F00ED1FB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E48A6F82BDC149F00ED1FB2 /* Preview Assets.xcassets */; };
 		3E48A6FB2BDC149F00ED1FB2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A6FA2BDC149F00ED1FB2 /* Persistence.swift */; };
 		3E48A6FE2BDC149F00ED1FB2 /* SwiftCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A6FC2BDC149F00ED1FB2 /* SwiftCoreData.xcdatamodeld */; };
+		3E48A7072BDC3E6400ED1FB2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A7062BDC3E6400ED1FB2 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		3E48A6F82BDC149F00ED1FB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E48A6FA2BDC149F00ED1FB2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3E48A6FD2BDC149F00ED1FB2 /* SwiftCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftCoreData.xcdatamodel; sourceTree = "<group>"; };
+		3E48A7062BDC3E6400ED1FB2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,8 @@
 		3E48A6F02BDC149A00ED1FB2 /* SwiftCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3E48A7052BDC3E4900ED1FB2 /* Views */,
+				3E48A7042BDC3E4100ED1FB2 /* ViewModel */,
 				3E48A6F12BDC149A00ED1FB2 /* SwiftCoreDataApp.swift */,
 				3E48A6F32BDC149A00ED1FB2 /* ContentView.swift */,
 				3E48A6F52BDC149F00ED1FB2 /* Assets.xcassets */,
@@ -71,6 +75,21 @@
 				3E48A6F82BDC149F00ED1FB2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3E48A7042BDC3E4100ED1FB2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3E48A7052BDC3E4900ED1FB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E48A7062BDC3E6400ED1FB2 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +165,7 @@
 				3E48A6FB2BDC149F00ED1FB2 /* Persistence.swift in Sources */,
 				3E48A6F42BDC149A00ED1FB2 /* ContentView.swift in Sources */,
 				3E48A6FE2BDC149F00ED1FB2 /* SwiftCoreData.xcdatamodeld in Sources */,
+				3E48A7072BDC3E6400ED1FB2 /* HomeView.swift in Sources */,
 				3E48A6F22BDC149A00ED1FB2 /* SwiftCoreDataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
