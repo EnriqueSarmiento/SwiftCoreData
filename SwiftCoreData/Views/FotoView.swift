@@ -19,12 +19,15 @@ struct FotoView: View {
    init(tarea: Tareas) {
       self.tarea = tarea
       self.fotos = FetchRequest<Fotos>(entity: Fotos.entity(), sortDescriptors: [], predicate: NSPredicate(format: "idTarea == %@", tarea.id!))
+      //dump(fotos.wrappedValue );
    }
    
    @State private var imageData : Data = .init(capacity: 0)
    @State private var mostrarMenu = false
    @State private var imagePicker = false
    @State private var source : UIImagePickerController.SourceType = .camera
+   
+   let gridItem : [GridItem] = Array(repeating: .init(.flexible(minimum: 100)), count: 3)
    
    
    func save(image: Data, context: NSManagedObjectContext){
@@ -50,7 +53,25 @@ struct FotoView: View {
                Text("")
             }.navigationBarTitle("")
                .navigationBarHidden(true)
-            Text("Grid")
+           
+            ScrollView() {
+                  if fotos.wrappedValue.count > 0 {
+                     LazyVGrid(columns: gridItem, spacing: 10) {
+                     ForEach(fotos.wrappedValue){ foto in
+                        if let image = foto.foto {
+                           
+                           Image(uiImage: UIImage(data: image)!)
+                              .resizable()
+                              .frame(width: 100, height: 100)
+                              .aspectRatio(contentMode: .fit)
+                        }
+                     }
+                     }
+                  }else{
+                     Text("No tienes fotos para esta tarea")
+                  }
+            }
+            
             HStack(alignment: .center, spacing: 60){
                Button(action:{
                   self.mostrarMenu.toggle()
@@ -69,11 +90,12 @@ struct FotoView: View {
                      .default(Text("Cancelar"))
                   ])
                }
+               
                Button {
                   save(image: imageData, context: context)
                } label: {
                   Text("guardar imagen")
-               }
+               }.disabled(imageData.isEmpty)
                
             }
          }
