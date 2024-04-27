@@ -19,6 +19,8 @@
 		3E48A70D2BDC447600ED1FB2 /* TareasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A70C2BDC447600ED1FB2 /* TareasView.swift */; };
 		3E48A70F2BDC44F200ED1FB2 /* AddTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A70E2BDC44F200ED1FB2 /* AddTareaView.swift */; };
 		3E48A7112BDC450100ED1FB2 /* TareasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A7102BDC450100ED1FB2 /* TareasViewModel.swift */; };
+		3E48A7132BDC5A9700ED1FB2 /* FotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A7122BDC5A9700ED1FB2 /* FotoView.swift */; };
+		3E48A7152BDC5C5800ED1FB2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E48A7142BDC5C5800ED1FB2 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		3E48A70C2BDC447600ED1FB2 /* TareasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TareasView.swift; sourceTree = "<group>"; };
 		3E48A70E2BDC44F200ED1FB2 /* AddTareaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTareaView.swift; sourceTree = "<group>"; };
 		3E48A7102BDC450100ED1FB2 /* TareasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TareasViewModel.swift; sourceTree = "<group>"; };
+		3E48A7122BDC5A9700ED1FB2 /* FotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoView.swift; sourceTree = "<group>"; };
+		3E48A7142BDC5C5800ED1FB2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				3E48A70A2BDC426400ED1FB2 /* AddMetaView.swift */,
 				3E48A70C2BDC447600ED1FB2 /* TareasView.swift */,
 				3E48A70E2BDC44F200ED1FB2 /* AddTareaView.swift */,
+				3E48A7122BDC5A9700ED1FB2 /* FotoView.swift */,
+				3E48A7142BDC5C5800ED1FB2 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,9 +188,11 @@
 				3E48A6F42BDC149A00ED1FB2 /* ContentView.swift in Sources */,
 				3E48A6FE2BDC149F00ED1FB2 /* SwiftCoreData.xcdatamodeld in Sources */,
 				3E48A7072BDC3E6400ED1FB2 /* HomeView.swift in Sources */,
+				3E48A7132BDC5A9700ED1FB2 /* FotoView.swift in Sources */,
 				3E48A6F22BDC149A00ED1FB2 /* SwiftCoreDataApp.swift in Sources */,
 				3E48A70F2BDC44F200ED1FB2 /* AddTareaView.swift in Sources */,
 				3E48A70B2BDC426400ED1FB2 /* AddMetaView.swift in Sources */,
+				3E48A7152BDC5C5800ED1FB2 /* ImagePicker.swift in Sources */,
 				3E48A70D2BDC447600ED1FB2 /* TareasView.swift in Sources */,
 				3E48A7092BDC3ED400ED1FB2 /* MetasViewModel.swift in Sources */,
 			);
