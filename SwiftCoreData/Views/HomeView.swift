@@ -16,11 +16,17 @@ struct HomeView: View {
    //here we create a fetch request to coredate to retorn our metas data.
    @FetchRequest(entity: Metas.entity(), sortDescriptors: []) var metas: FetchedResults<Metas>
    
+   //VARIABLES FOR SEARCH BAR
+   @State var buscar: String = ""
+   
     var body: some View {
        NavigationView{
           VStack{
+             SearchBar(text: $buscar)
              List{
-                ForEach(metas){ meta in
+                ForEach(metas.filter {
+                   buscar.isEmpty ? true : $0.titulo!.lowercased().contains(buscar.lowercased())
+                }){ meta in
                    NavigationLink(destination: TareasView(meta: meta)) {
                       VStack(alignment: .leading) {
                          Text(meta.titulo ?? "")
